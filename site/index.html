@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z-SOFT by DAWID ZŁY</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: url('bg.jpg') center/cover fixed no-repeat;
+  color: #fff;
+  min-height: 100vh;
+  image-rendering: pixelated;
+}
+header {
+  text-align: center;
+  padding: 40px 20px;
+  text-shadow: 4px 4px 0 #ff00aa, -2px -2px 0 #00ffff;
+}
+h1 {
+  font-size: 2.5rem;
+  color: #ff00ff;
+  letter-spacing: 2px;
+}
+.subtitle {
+  font-size: 1rem;
+  color: #00ffff;
+  margin-top: 10px;
+}
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.game-card {
+  background: transparent;
+  border: none;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: none;
+}
+.game-card img {
+  width: 100%;
+  image-rendering: pixelated;
+  border: none;
+}
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button, .btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  padding: 12px 18px;
+  border: 3px solid #fff;
+  background: #ff00ff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover, .btn:hover {
+  background: #00ffff;
+  color: #000;
+  border-color: #ff00ff;
+  transform: scale(1.05);
+}
+.ships {
+  text-align: center;
+  padding: 40px 20px;
+}
+.ships img {
+  max-width: 90%;
+  image-rendering: pixelated;
+  border: none;
+  box-shadow: none;
+}
+.about {
+  background: rgba(0,0,0,0.7);
+  padding: 40px 20px;
+  text-align: center;
+  color: #ffff00;
+  text-shadow: 2px 2px 0 #000;
+  max-width: 800px;
+  margin: 40px auto;
+  border: none;
+}
+.about img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  margin-bottom: 20px;
+  image-rendering: pixelated;
+}
+.about p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 0.75rem;
+}
+footer {
+  background: rgba(0,0,0,0.8);
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 4px solid #00ffff;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.socials a {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background: #ff00ff;
+  color: #000;
+  padding: 10px 15px;
+  font-size: 0.6rem;
+  border: 3px solid #00ffff;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.socials a:hover {
+  background: #00ffff;
+  color: #000;
+  border-color: #ff00ff;
+  transform: scale(1.05);
+}
+/* Remove old icon classes */
+.footer-btns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+#game-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: #000;
+  z-index: 9999;
+}
+#game-overlay iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+#close-game {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+  background: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  .game-card { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <img src="zsoft-logo-trans.png" alt="Z-SOFT" style="max-width: 500px; image-rendering: pixelated;">
+  <div class="subtitle">by DAWID ZŁY</div>
+</header>
+
+<section class="games">
+  <div class="game-card">
+    <img src="lazer-battle.png" alt="LAZER BATTLE">
+    <div class="buttons">
+      <button onclick="playGame('https://frost-beacon-garden-gem.grok.me')">PLAY!</button>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=soft.dawidzly.lazerbattle" target="_blank">DOWNLOAD</a>
+    </div>
+  </div>
+  <div class="game-card">
+    <img src="lazer-miner.png" alt="LAZER MINER">
+    <div class="buttons">
+      <button onclick="playGame('https://plum-jade-leaf-moon.grok.me')">PLAY!</button>
+      <button onclick="alert('Download link coming soon!')">DOWNLOAD</button>
+    </div>
+  </div>
+</section>
+
+<section class="ships">
+  <h2 style="color:#00ffff; text-shadow: 3px 3px 0 #ff00ff; margin-bottom:20px;">SHIPS</h2>
+  <img src="ships-clean.png" alt="Ships from the games: Spark, Viper, Razor, Titan, Zero">
+</section>
+
+<section class="about">
+  <img src="logo.png" alt="Dawid Zły">
+  <p>A games created by Dawid Zły</p>
+  <p>A Kashubian musician, rapper, and composer.</p>
+  <p>Programming is my passion.</p>
+  <p>By playing this game, you support the Kashubian people.</p>
+  <p>Play, have fun, and show your support by playing!</p>
+</section>
+
+<footer>
+  <div class="socials">
+    <a href="https://www.youtube.com/@DawidZ%C5%82y" target="_blank">▶ YouTube</a>
+    <a href="https://open.spotify.com/artist/7hqDugLzQ5XMxnM2y7NjC4" target="_blank">♫ Spotify</a>
+    <a href="https://dawidzly.bandcamp.com" target="_blank">♫ Bandcamp</a>
+    <a href="https://facebook.com/kaszubskihiphop" target="_blank">f Facebook</a>
+    <a href="https://instagram.com/dawid_zly" target="_blank">📷 Instagram</a>
+  </div>
+  <div class="footer-btns">
+    <a class="btn" href="app-ads.txt" download>ADS-LB</a>
+    <a class="btn" href="privacy.html">PRIVACY POLICY</a>
+  </div>
+</footer>
+
+<div id="game-overlay">
+  <button id="close-game" onclick="closeGame()">X CLOSE</button>
+  <iframe id="game-frame" src="" allowfullscreen></iframe>
+</div>
+
+<script>
+function playGame(url) {
+  const overlay = document.getElementById('game-overlay');
+  const frame = document.getElementById('game-frame');
+  frame.src = url;
+  overlay.style.display = 'block';
+  if (overlay.requestFullscreen) {
+    overlay.requestFullscreen();
+  } else if (overlay.webkitRequestFullscreen) {
+    overlay.webkitRequestFullscreen();
+  }
+}
+function closeGame() {
+  const overlay = document.getElementById('game-overlay');
+  overlay.style.display = 'none';
+  document.getElementById('game-frame').src = '';
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
+</script>
+</body>
+</html>
